@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeReference{% endblock %}
+
+{% block body %}
+    <h1>Create new TypeReference</h1>
+
+    {{ include('type_reference/_form.html.twig') }}
+
+    <a href="{{ path('app_type_reference_index') }}">back to list</a>
+{% endblock %}

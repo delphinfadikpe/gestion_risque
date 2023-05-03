@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypologieIrregularite{% endblock %}
+
+{% block body %}
+    <h1>TypologieIrregularite</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ typologie_irregularite.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ typologie_irregularite.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_typologie_irregularite_index') }}">back to list</a>
+
+    <a href="{{ path('app_typologie_irregularite_edit', {'id': typologie_irregularite.id}) }}">edit</a>
+
+    {{ include('typologie_irregularite/_delete_form.html.twig') }}
+{% endblock %}

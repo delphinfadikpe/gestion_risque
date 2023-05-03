@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EvaluationtPerte index{% endblock %}
+
+{% block body %}
+    <h1>EvaluationtPerte index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for evaluationt_perte in evaluationt_pertes %}
+            <tr>
+                <td>{{ evaluationt_perte.id }}</td>
+                <td>{{ evaluationt_perte.libelle }}</td>
+                <td>
+                    <a href="{{ path('app_evaluationt_perte_show', {'id': evaluationt_perte.id}) }}">show</a>
+                    <a href="{{ path('app_evaluationt_perte_edit', {'id': evaluationt_perte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_evaluationt_perte_new') }}">Create new</a>
+{% endblock %}

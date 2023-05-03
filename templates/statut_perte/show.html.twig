@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StatutPerte{% endblock %}
+
+{% block body %}
+    <h1>StatutPerte</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ statut_perte.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ statut_perte.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_statut_perte_index') }}">back to list</a>
+
+    <a href="{{ path('app_statut_perte_edit', {'id': statut_perte.id}) }}">edit</a>
+
+    {{ include('statut_perte/_delete_form.html.twig') }}
+{% endblock %}

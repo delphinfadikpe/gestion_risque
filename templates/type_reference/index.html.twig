@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeReference index{% endblock %}
+
+{% block body %}
+    <h1>TypeReference index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_reference in type_references %}
+            <tr>
+                <td>{{ type_reference.id }}</td>
+                <td>{{ type_reference.libelle }}</td>
+                <td>
+                    <a href="{{ path('app_type_reference_show', {'id': type_reference.id}) }}">show</a>
+                    <a href="{{ path('app_type_reference_edit', {'id': type_reference.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_type_reference_new') }}">Create new</a>
+{% endblock %}

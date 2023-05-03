@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EtatPretSystem index{% endblock %}
+
+{% block body %}
+    <h1>EtatPretSystem index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etat_pret_system in etat_pret_systems %}
+            <tr>
+                <td>{{ etat_pret_system.id }}</td>
+                <td>{{ etat_pret_system.libelle }}</td>
+                <td>
+                    <a href="{{ path('app_etat_pret_system_show', {'id': etat_pret_system.id}) }}">show</a>
+                    <a href="{{ path('app_etat_pret_system_edit', {'id': etat_pret_system.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_etat_pret_system_new') }}">Create new</a>
+{% endblock %}

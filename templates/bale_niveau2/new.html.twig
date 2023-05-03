@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New BaleNiveau2{% endblock %}
+
+{% block body %}
+    <h1>Create new BaleNiveau2</h1>
+
+    {{ include('bale_niveau2/_form.html.twig') }}
+
+    <a href="{{ path('app_bale_niveau2_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BaleNiveau2 index{% endblock %}
+
+{% block body %}
+    <h1>BaleNiveau2 index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Bale Niveau 1</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bale_niveau2 in bale_niveau2s %}
+            <tr>
+                <td>{{ bale_niveau2.id }}</td>
+                <td>{{ bale_niveau2.libelle }}</td>
+                <td>{{ bale_niveau2.baleNiveau1 }}</td>
+                <td>
+                    <a href="{{ path('app_bale_niveau2_show', {'id': bale_niveau2.id}) }}">show</a>
+                    <a href="{{ path('app_bale_niveau2_edit', {'id': bale_niveau2.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bale_niveau2_new') }}">Create new</a>
+{% endblock %}

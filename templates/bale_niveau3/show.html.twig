@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BaleNiveau3{% endblock %}
+
+{% block body %}
+    <h1>BaleNiveau3</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bale_niveau3.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ bale_niveau3.libelle }}</td>
+            </tr>           
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bale_niveau3_index') }}">back to list</a>
+
+    <a href="{{ path('app_bale_niveau3_edit', {'id': bale_niveau3.id}) }}">edit</a>
+
+    {{ include('bale_niveau3/_delete_form.html.twig') }}
+{% endblock %}

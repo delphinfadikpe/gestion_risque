@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypologieIrregularite index{% endblock %}
+
+{% block body %}
+    <h1>TypologieIrregularite index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typologie_irregularite in typologie_irregularites %}
+            <tr>
+                <td>{{ typologie_irregularite.id }}</td>
+                <td>{{ typologie_irregularite.libelle }}</td>
+                <td>
+                    <a href="{{ path('app_typologie_irregularite_show', {'id': typologie_irregularite.id}) }}">show</a>
+                    <a href="{{ path('app_typologie_irregularite_edit', {'id': typologie_irregularite.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_typologie_irregularite_new') }}">Create new</a>
+{% endblock %}

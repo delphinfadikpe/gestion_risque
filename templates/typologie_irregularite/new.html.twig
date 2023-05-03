@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypologieIrregularite{% endblock %}
+
+{% block body %}
+    <h1>Create new TypologieIrregularite</h1>
+
+    {{ include('typologie_irregularite/_form.html.twig') }}
+
+    <a href="{{ path('app_typologie_irregularite_index') }}">back to list</a>
+{% endblock %}

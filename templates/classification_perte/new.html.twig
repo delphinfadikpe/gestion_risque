@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ClassificationPerte{% endblock %}
+
+{% block body %}
+    <h1>Create new ClassificationPerte</h1>
+
+    {{ include('classification_perte/_form.html.twig') }}
+
+    <a href="{{ path('app_classification_perte_index') }}">back to list</a>
+{% endblock %}

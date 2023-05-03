@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit BaleNiveau1{% endblock %}
+
+{% block body %}
+    <h1>Edit BaleNiveau1</h1>
+
+    {{ include('bale_niveau1/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_bale_niveau1_index') }}">back to list</a>
+
+    {{ include('bale_niveau1/_delete_form.html.twig') }}
+{% endblock %}

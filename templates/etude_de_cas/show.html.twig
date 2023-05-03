@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EtudeDeCas{% endblock %}
+
+{% block body %}
+    <h1>EtudeDeCas</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etude_de_ca.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ etude_de_ca.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_etude_de_cas_index') }}">back to list</a>
+
+    <a href="{{ path('app_etude_de_cas_edit', {'id': etude_de_ca.id}) }}">edit</a>
+
+    {{ include('etude_de_cas/_delete_form.html.twig') }}
+{% endblock %}

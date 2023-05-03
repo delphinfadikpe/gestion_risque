@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeReference{% endblock %}
+
+{% block body %}
+    <h1>TypeReference</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_reference.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ type_reference.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_type_reference_index') }}">back to list</a>
+
+    <a href="{{ path('app_type_reference_edit', {'id': type_reference.id}) }}">edit</a>
+
+    {{ include('type_reference/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClassificationPerte index{% endblock %}
+
+{% block body %}
+    <h1>ClassificationPerte index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for classification_perte in classification_pertes %}
+            <tr>
+                <td>{{ classification_perte.id }}</td>
+                <td>{{ classification_perte.libelle }}</td>
+                <td>
+                    <a href="{{ path('app_classification_perte_show', {'id': classification_perte.id}) }}">show</a>
+                    <a href="{{ path('app_classification_perte_edit', {'id': classification_perte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_classification_perte_new') }}">Create new</a>
+{% endblock %}
